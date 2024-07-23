@@ -1,0 +1,28 @@
+<lang="pt-br">
+
+    <meta charset="UTF-8">
+
+<script src="semana.js"></script>
+
+
+ 
+function removerAcentos(str) {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
+let diaDaSemana = prompt('Que dia da semana é hoje?').toLowerCase();
+diaDaSemana = removerAcentos(diaDaSemana);
+
+let seg = removerAcentos("segunda").toLowerCase();
+let ter = removerAcentos("terça").toLowerCase();
+let qua = removerAcentos("quarta").toLowerCase();
+let qui = removerAcentos("quinta").toLowerCase();
+let sex = removerAcentos("sexta").toLowerCase();
+let sab = removerAcentos("sábado").toLowerCase();
+let dom = removerAcentos("domingo").toLowerCase();
+
+if (diaDaSemana === sab || diaDaSemana === dom) {
+    alert("Bom final de semana!");
+} else {
+    alert("Boa semana!");
+}
